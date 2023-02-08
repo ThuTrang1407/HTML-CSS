@@ -1,0 +1,98 @@
+@mixin size ($width, $height:$width){
+    width: $width;
+    height: $height;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #f3faff;
+}
+img{
+    display: block;
+    max-width: 100%;
+   
+}
+.dropdown{
+    width: 40rem;
+    margin: 2rem auto 0;
+    position: relative;
+    &__select{
+        padding: 2rem 2.5rem 2rem 4rem;
+        background-color: #42a7fe;
+        color: white;
+        display:flex;
+        align-items: center;
+        cursor: pointer;
+       
+    }
+    &_text{
+        margin-left: 3.5rem;
+
+    }
+    &-caret{
+        margin-left: auto;
+    }
+    &_item{
+        padding: 2rem 2.5rem 2rem 4rem;
+        display:flex; 
+        align-items: center;
+        color: #b3bbce;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        border-left: 3px solid transparent;
+        &:not(:last-child){
+            border-bottom: 1px solid #eee;
+        }
+        &:hover{
+            color: #74809d;
+            border-left-color: #42a7fe;
+
+        }
+    }
+    &__lists{
+        position: absolute;
+        top:100%;
+        left: 0;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 3rem;
+        background: white;
+        box-shadow: 0 0 10px 0 rgb(black,0.25);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25s linear;
+        &:before{
+            content: "";
+            @include size(2rem);
+            // border-left: 10px solid transparent;
+            // border-right: 10px solid transparent;
+            // border-bottom: 10px solid white;
+            background-color: white;
+            border-radius: 3px;
+            position:absolute ;
+            top: 0;
+            right: 2rem;
+            transform: translateY(-50%) rotate(45deg);
+            z-index: -1;
+
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            @include size(100%,3rem );
+            top: 0;
+            left: 0;
+            background-color:transparent;
+            transform: translateY(-100%);
+        }
+    }&:hover{
+        .dropdown__lists{
+            opacity: 1;
+            visibility: visible;
+        }
+
+    }
+    
+    
+}
