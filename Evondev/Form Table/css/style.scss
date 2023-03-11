@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&family=Roboto:wght@100&display=swap');
 $primary: #fa4c53;
 $text-color: #291667;
 html {
@@ -13,6 +14,14 @@ body {
     background-color: #fbfbfd;
     padding: 5rem;
     min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+input, textarea, button, select {
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    outline: none;
 }
   
 a {
@@ -74,6 +83,7 @@ img {
         display: flex;
         justify-content: space-between;
         margin-bottom: 6rem;
+        font-size: 1.4rem;
         &__item{
             cursor: pointer;
             @include flexbox(center,center);
@@ -86,7 +96,108 @@ img {
         &__icon {
             margin-right: 2rem;
         }
+    } 
+    &-form {
+        &__label {
+            color: $text-color;
+            display: inline-block;
+            margin-bottom: 1rem;
+            transform: translateX(1rem);
+            cursor: pointer;
+        }
+        &__input {
+            background-color: #fafbff;
+            padding: 1.5rem 2rem;
+            border: 1px solid #eee;
+            border-radius: 1rem ;
+            display: block;
+            width: 100%;
+            transition: all 0.25s linear;
+            &:focus {
+                background-color: white;
+                border-color: $primary;
+                & + .signup-form__check {
+                    background-color: $primary;
+                    color: white;
+                }
+            }
+        }
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            .signup-form__group {
+                width: calc(50% - 1.5rem);
+            }
+        }
+        &__term {
+            margin-top: 2.5rem;
+            input {
+                display: none;
+                &:checked + label:before {
+                    border: $primary;
+                    background-color: $primary;
+
+                }
+            }
+            label {
+                position: relative;
+                cursor: pointer;
+                padding-left: 3.5rem;
+                display: inline-block;
+                margin-bottom: 5rem;
+                &:before {
+                    content: "";
+                    @include size(2.5rem);
+                    border-radius: 8px;
+                    background-color: #eee;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border: 1px solid #ccc;
+                    transition: all 0.25s linear;
+                }
+            }
+        } 
+        &__submit {
+            @include size(8rem);
+            color: white;
+            border: 0;
+            border-radius: 3rem;
+            background-color: $primary;
+            font-size: 2.5rem;
+            cursor: pointer;
+            margin-bottom: 6.5rem;
+            box-shadow: 0 10px 10px 0px rgba($primary, 0.5);
+        }
+        &__validate {
+            position: relative;
+            .signup-form__input {
+                padding-right: 6rem;
+            }
+        }
+        &__check {
+            @include size(3rem);
+            border-radius: 10px;
+            background-color: #eee;
+            color: $text-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.25s linear;
+        }
     }
+    &__already {
+        color: $text-color;
+        a {
+            color: $primary;
+        }
+    }  
 }
 
       
