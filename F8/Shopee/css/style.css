@@ -737,11 +737,15 @@
 .app__container {
     background-color: #f5f5f5;
 }
+.app__content {
+    padding-top: 36px;
+}
 .catergory {
     border-radius: 2px;
     background-color: white;
 }
 .catergory__heading {
+    margin-top: 0;
     color:var(--text-color);
     font-size: 1.6rem;
     padding: 12px 16px;
@@ -784,4 +788,65 @@
 .catergory-item__link:hover {
     right: -4px;
     color: var(--primary-color);
+}
+.home-fillter {
+    background-color: rgba(0,0,0,.05);
+    display: flex;
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: 2px;
+}
+.home-fillter__page {
+    display: flex;
+    align-items: center;
+}
+.home-fillter_label {
+    color: #555555;
+    font-size: 1.4rem;
+    margin-right: 16px;
+}
+.home-fillter_btn {
+    min-width: 90px;
+    margin-right: 12px;
+}
+
+.home-fillter__page {
+    margin-left: auto;
+}
+.home-fillter__page-num {
+    font-size: 1.4rem;  
+    color: var(--text-color);
+    margin-right: 22px;
+
+}
+.home-fillter__page-current {
+    color: var(--primary-color);
+}
+.home-fillter__page-control {
+    display: flex;
+    border: 2px;
+    overflow: hidden;
+    width: 72px;
+    height: 36px;
+}
+.home-fillter__page--btn {
+    display: flex;
+    background-color: white;
+    flex: 1;
+    text-decoration: none;
+}
+.home-fillter__page--icon {
+    margin: auto;
+}
+.home-fillter__page--btn:first-child {
+    color: #555;
+    border-right:1px solid #eee ;
+}
+.home-fillter__page--btn-disable {
+    background-color: #f9f9f9;
+    cursor: default;
+}
+.home-fillter__page--btn-disable .home-fillter__page--icon {
+    color: #ccc;
+
 }
