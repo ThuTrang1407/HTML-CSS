@@ -851,7 +851,18 @@
 
 }
 .home-product-item {
+    margin-top: 10px;
     background-color: var(--white-color);
+    position: relative;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, .1);
+    transition: transform eas 0.1s;
+    will-change: transform;
+}
+.home-product-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0.1rem 2rem 0 rgba(0, 0, 0, .1);
 }
 .home-product-item-img {
     padding-top: 100%;
@@ -931,4 +942,70 @@ i.home-product-item-like--icon-fill {
     color: #595959;
     font-size: 1.2rem;
     font-weight: 300;
+}
+.home-product-item__favorite {
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    color: var(--primary-color);
+    background-color: currentColor;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    padding-right: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.home-product-item__favorite span {
+    color: var(--white-color);
+    
+}
+
+.home-product-item__favorite i {
+    color: var(--white-color);
+    font-size: 0.9rem;
+    margin: 0 2px 0 4px ;
+}
+.home-product-item__favorite::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    border-top: 3px solid currentColor;
+    border-left: 3px solid transparent;
+    filter: brightness(60%);
+}
+.home-product-item__saleoff {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 36px;
+    background-color: rgb(255, 216, 64,0.94);
+    text-align: center;
+}
+.home-product-item__percent {
+    color: #ee4d2d;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    position: relative;
+    top: 2px;
+}
+.home-product-item__percent-label {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: var(--white-color);
+    font-weight: 500;
+    position: relative;
+    top:2px
+}
+.home-product-item__saleoff::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    border-width: 0 20px 4px;
+    border-style: solid;
+    border-color: transparent rgb(255, 216, 64,0.94) transparent rgb(255, 216, 64,0.94);
 }
