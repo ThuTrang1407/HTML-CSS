@@ -4,7 +4,7 @@
   --black-color: #000;
   --text-color: #333;
   --border-color: #dbdbdb;
-  --star-gold-color:#ffce3e;
+  --star-gold-color: #ffce3e;
   --navbar-height: 34px;
   --header-height: 120px;
   --header-with-search-height: calc(
@@ -125,7 +125,7 @@ html {
   padding: 0 8px;
 }
 .select-input {
-    position: relative;
+  position: relative;
   min-width: 200px;
   height: 34px;
   padding: 0 12px;
@@ -145,28 +145,56 @@ html {
   top: 0px;
 }
 .select-input__list {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 80%;
-    border-radius: 2px;
-    background-color: white;
-    list-style: none;
-    padding: 8px 16px;
-    display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80%;
+  border-radius: 2px;
+  background-color: white;
+  list-style: none;
+  padding: 8px 16px;
+  display: none;
+  z-index: 1;
 }
 .select-input-link {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    text-decoration: none;
-    display: block;
-    padding: 8px 0;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
 }
 .select-input-link:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 .select-input:hover .select-input__list {
-    display: block;
+  display: block;
 }
-
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.pagination-item--active .pagination-item-link{
+  color:var(--white-color);
+  background-color: var(--primary-color);
+}
+.pagination-item--active:hover .pagination-item-link {
+  background-color: #ed5c3f;
+}
+.pagination-item {
+  margin: 0 12px ;
+}
+.pagination-item-link {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 300;
+  color:#939393;
+  min-width: 40px;
+  height: 30px; 
+  line-height: 30px;
+  border-radius: 2px;
+}
 
